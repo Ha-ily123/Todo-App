@@ -1,0 +1,18 @@
+.s1 {
+    display: flex;
+    width: 100%;
+    border: 2px solid black;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    justify-content: space-between;
+
+}
+
+.r1{
+    display: flex;
+    height: 40px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+
+}
