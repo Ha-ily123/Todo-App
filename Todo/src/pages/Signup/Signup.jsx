@@ -34,40 +34,40 @@ const Signup = () => {
   // })
   return (
     <div className={style.he}>
-      <div className={style.h1}>
+      
 
-        <form onSubmit={handleSign}>
-          <div className={style.h2}>
-            <input type='email'
+        <form className={style.h1} onSubmit={handleSign}>
+         
+            <input className={style.h2} type='email'
               placeholder='Enter the email'
               onChange={changeHandle}
               value={sign.email}
               name='email'></input>
-          </div>
+         
           <br></br>
-          <div className={style.h3}>
-            <input type='text'
+          
+            <input className={style.h3} type='text'
               placeholder='Enter the user name'
               onChange={changeHandle}
               value={sign.userName}
               name='userName'></input>
-          </div>
+          
           <br></br>
-          <div className={style.h4}>
-            <input type='password'
+          
+            <input className={style.h4} type='password'
               placeholder='Enter the passwrd'
               onChange={changeHandle}
               value={sign.password}
               name='password'></input>
-          </div>
+          
           <br></br>
-          <div className={style.h5}>
-          <button type='submit'>SignUp</button>
-          </div>
+          
+          <button  className={style.h5} type='submit'>SignUp</button>
+          <span>Do you have another account <Link to='/Signinpage'>Signin</Link></span>
         </form>
-        <span>Do you have another account <Link to='/Signinpage'>Signin</Link></span>
+       
       </div>
-    </div>
+    
   )
 }
 

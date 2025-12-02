@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Router } from 'react-router-dom'
 
-
+import Landing from './pages/Landing/Lading'
 import Signup from './pages/Signup/Signup'
 import Signin from './pages/Signin/Signin'
 import Home from './pages/Home/Home'
@@ -15,7 +15,8 @@ const App = () => {
 
     <BrowserRouter>
       <Routes>
-        <Route element={<Signup />} path='/' />
+        <Route element={<Landing/>} path='/'/>
+        <Route element={<Signup />} path='/SignupPage' />
         <Route element={<Signin />} path='/Signinpage' />
         <Route element={<Home />} path='/Homepage' />
         <Route element={<ViewTask />} path='/ViewTaskpage' />

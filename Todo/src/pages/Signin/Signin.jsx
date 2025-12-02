@@ -19,6 +19,7 @@ const Signin = () => {
       let response1 = await axios.post('http://Localhost:3000/signin', work)
       console.log(response1);
       if (response1.data.success == true) {
+        alert("signIn success")
         navigate('/Homepage')
 
 
@@ -35,31 +36,31 @@ const Signin = () => {
   return (
 
     <div className={style.i1}>
-      <div className={style.i2}>
-        <form onSubmit={handleWork}>
-          <div className={style.i3}>
-            <input type="email"
+
+        <form  className={style.i2}onSubmit={handleWork}>
+          
+            <input className={style.i3} type="email"
               placeholder="Enter the email"
               onChange={changeWork}
               value={work.email}
               name='email'></input>
-          </div>
+      
           <br></br>
-          <div className={style.i4}>
-            <input type='password'
+       
+            <input  className={style.i4} type='password'
               placeholder='Enter the passwrd'
               onChange={changeWork}
               value={work.password}
               name='password'></input>
-          </div>
+         
           <br></br>
-           <div className={style.i5}>
-          <button type='submit'>Signin</button>
-     </div>
+           
+          <button className={style.i5}type='submit'>Signin</button>
+   
     </form>
  </div>
 
-    </div >
+   
   )
 }
 

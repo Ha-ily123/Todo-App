@@ -16,9 +16,15 @@ const Home = () => {
     }
     async function handletask(e) {
         e.preventDefault()
+        if (task.taskDeadline == "") {
+            alert("Please fill the date");
+            return;
+        }
         try {
             let response2 = await axios.post('http://Localhost:3000/AddTask', task)
             console.log(response2);
+            alert(response2.data.message)
+
         }
         catch (error) {
             console.log(error);
@@ -30,30 +36,33 @@ const Home = () => {
             <div className={style.k1}>
                 <h1>Add Task</h1>
             </div>
+            <br></br>
             <form onSubmit={handletask}>
                 <div className='he'>
-                    <div className={style.t2}>
-                        <input type='text'
-                            placeholder='Enter the taskname'
-                            onChange={changeTask}
-                            value={task.taskName}
-                            name='taskName' />
-                    </div>
-                    <div className={style.t3}>
-                        <select name='taskPriority' onChange={changeTask}>
-                            <option value='top'>top</option>
-                            <option value='mid'>mid</option>
-                            <option value='last'>last</option>
 
-                        </select>
-                    </div>
-                    <div className={style.t4}>
-                        <input type='date'
-                            placeholder='yy-mm-dd'
-                            onChange={changeTask}
-                            value={task.taskDeadline}
-                            name='taskDeadline' />
-                    </div>
+                    <input className={style.t2} type='text'
+                        placeholder='Enter the taskname'
+                        onChange={changeTask}
+                        value={task.taskName}
+                        name='taskName' />
+
+                
+
+                    <select className={style.t3} name='taskPriority' onChange={changeTask}>
+                        <option value='top'>top</option>
+                        <option value='mid'>mid</option>
+                        <option value='last'>last</option>
+
+                    </select>
+
+
+                    <input className={style.t4} type='date'
+                        placeholder='yy-mm-dd'
+                        onChange={changeTask}
+                        value={task.taskDeadline}
+                        name='taskDeadline' />
+
+
                     <div className={style.t5}>
                         <button type='submit'>addTask</button>
                     </div>
@@ -61,6 +70,7 @@ const Home = () => {
             </form>
             <div className={style.t5}>
                 <Link to={'/ViewTaskpage'}><button>View all tasks</button></Link>
+                <Link to={'/'}><button>Logout</button></Link>
             </div>
         </div>
     )

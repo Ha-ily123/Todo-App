@@ -1,0 +1,33 @@
+.l1 {
+    height: 50px;
+    width: 70px;
+    border-radius: 5px;
+}
+
+.l2 {
+    height: 50px;
+    width: 70px;
+    border-radius: 5px;
+}
+
+.l3 {
+    display: flex;
+    margin-left: 170vh;
+    gap: 30px;
+}
+.l4{
+    display: flex;
+    height: 60vh;
+    margin-left: 80vh;
+    margin-top: 50px;
+}
+.l6{
+    display: flex;
+    justify-content: center;
+   
+}
+.l7{
+    display: flex;
+    justify-content: center;
+   
+}

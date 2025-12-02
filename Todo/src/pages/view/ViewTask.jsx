@@ -6,15 +6,20 @@ import { useNavigate } from 'react-router-dom'
 
 const ViewTask = () => {
   const [browser, setBrowser] = useState([])
+
   const navigate = useNavigate()
   async function printApi() {
-    let a = await axios.get("http://Localhost:3000/getTasks")
-    console.log(a);
+    try {
+      let a = await axios.get("http://Localhost:3000/getTasks")
+      console.log(a);
+      setBrowser(a.data.data)
+    }
 
-    setBrowser(a.data.data)
+    catch (error) {
+      console.log(error);
 
+    }
   }
-
 
   useEffect(() => { printApi() }, [])
 
@@ -25,44 +30,63 @@ const ViewTask = () => {
       console.log(response);
       printApi()
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
+  }
+  function convertDate(d) {
+
+    let rawDate = d.split("T")
+    console.log(rawDate[0]);
+    let date = rawDate[0].split("-")
+    console.log(date);
+
+    return `${date[2]}-${date[1]}-${date[0]}`
+
   }
 
   return (
-    <div className={style.he}>
-      {browser.map((v, i) => {
-        return (
-          <div className={style.s1} key={i}>
+    <div>
+      <div className={style.he}>
+        <button className={style.r1} onClick={() => {
+          navigate(-1)
+        }}>back</button>
+        
+        <Link to={'/'}><button className={style.r4}>Logout</button></Link>
+      </div>
 
-            <h1>{v.taskName}</h1>
+      <div className={style.r5}>
+        {browser.map((v, i) => {
+          return (
+            <div className={style.s1} key={i}>
 
-
-            <h1>Priority:{v.taskPriority}</h1>
-
-            <h1>Deadline:{v.taskDeadline}</h1>
-
-
-            <Link to={`/EditPage/${v._id}`}>
-              <button>Edit</button>
-            </Link>
-
-
-            <button onClick={() => deleteTask(v._id)}>Delete</button>
+              <h1>{v.taskName}</h1>
 
 
+              <h1>Priority:{v.taskPriority}</h1>
 
-          </div>
-        )
+              <h1>Deadline:{convertDate(v.taskDeadline)}</h1>
+
+
+              <Link to={`/EditPage/${v._id}`}>
+                <button className={style.r3}>Edit</button>
+              </Link>
+
+
+              <button className={style.r2} onClick={() => deleteTask(v._id)}>Delete</button>
 
 
 
-      })}
-      <button className={style.r1} onClick={() => {
-        navigate(-1)
-      }}>back</button>
+            </div>
+          )
 
+
+
+
+        })}
+
+      </div>
     </div>
+
   )
 }
 
