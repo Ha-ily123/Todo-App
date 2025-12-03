@@ -38,6 +38,7 @@ const Signin = () => {
     <div className={style.i1}>
 
         <form  className={style.i2}onSubmit={handleWork}>
+          <h1>SignIn</h1>
           
             <input className={style.i3} type="email"
               placeholder="Enter the email"

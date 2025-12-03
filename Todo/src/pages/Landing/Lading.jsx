@@ -6,7 +6,7 @@ import photo from '../../assets/image.png'
 const Lading = () => {
   return (
     <div className={style.l5}>
-    
+
       <div className={style.l3}>
         <Link to='/SignupPage'>
           <button className={style.l1}>SignUp</button>
@@ -14,17 +14,23 @@ const Lading = () => {
         <Link to='/Signinpage'>
           <button className={style.l2}>SignIn</button>
         </Link>
-        
-       
+
+
       </div>
-      <h1 className={style.l6}>TO-DO</h1>
-      <h2 className={style.l7}>LANDING PAGE</h2>
-      <div className={style.l4}>
-        
-      <img src={photo}/>
+      <div className={style.mainBox}>
+        <div className={style.h1}>
+          <h1 className={style.l6}>TO-DO</h1>
+          <h2 className={style.l7}>LANDING PAGE</h2>
+        </div>
+        <div className={style.l4}>
+          <img src={photo} />
+        </div>
       </div>
-      </div>
-      
+
+
+
+    </div>
+
 
   )
 }

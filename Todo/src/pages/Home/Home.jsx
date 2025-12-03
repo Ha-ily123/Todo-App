@@ -32,23 +32,23 @@ const Home = () => {
         }
     }
     return (
-        <div className={style.t1}>
-            <div className={style.k1}>
+        <div className={style.container}>
+            {/* <div className={style.k1}>
                 <h1>Add Task</h1>
-            </div>
+            </div> */}
             <br></br>
-            <form onSubmit={handletask}>
-                <div className='he'>
+            <form className={style.table} onSubmit={handletask}>
+                
 
-                    <input className={style.t2} type='text'
+                    <input className={style.h2} type='text'
                         placeholder='Enter the taskname'
                         onChange={changeTask}
                         value={task.taskName}
                         name='taskName' />
+                    <br></br>
 
-                
 
-                    <select className={style.t3} name='taskPriority' onChange={changeTask}>
+                    <select className={style.h3} name='taskPriority' onChange={changeTask}>
                         <option value='top'>top</option>
                         <option value='mid'>mid</option>
                         <option value='last'>last</option>
@@ -56,22 +56,23 @@ const Home = () => {
                     </select>
 
 
-                    <input className={style.t4} type='date'
+                    <input className={style.h4} type='date'
                         placeholder='yy-mm-dd'
                         onChange={changeTask}
                         value={task.taskDeadline}
                         name='taskDeadline' />
 
 
-                    <div className={style.t5}>
-                        <button type='submit'>addTask</button>
-                    </div>
+                  
+                        <button  className={style.h5} type='submit'>addTask</button>
+                    
+               
+                <div className={style.button}>
+                    <Link to={'/ViewTaskpage'}><button className={style.h6} >View all tasks</button></Link>
+                    <Link to={'/'}><button className={style.h7}>Logout</button></Link>
                 </div>
             </form>
-            <div className={style.t5}>
-                <Link to={'/ViewTaskpage'}><button>View all tasks</button></Link>
-                <Link to={'/'}><button>Logout</button></Link>
-            </div>
+
         </div>
     )
 

@@ -1,43 +1,45 @@
 .i1 {
     display: flex;
     height: 100vh;
-    border: 5px solid green;
+    
     justify-content: center;
-    border-radius: 20px;
+    
     align-items: center;
+    background-color: rgb(239, 211, 211);
 }
 
 .i2 {
     height: 350px;
     width: 400px;
-    border: 2px solid blue;
+    border: 2px solid rgb(233, 233, 240);
     border-radius: 30px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+    background-color: antiquewhite;
 }
 
 .i3{
     height: 40px;
-    width: 80%;
+    width: 70%;
     padding: 5px;
 }
 .i4 {
     height: 40px;
-    width: 80%;
+    width: 70%;
     padding: 5px;
 }
 
 
 .i5 {
     height: 40px;
-    width: 50%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background-color: rgb(91, 225, 77);
+    background-color: rgb(72, 99, 69);
 }

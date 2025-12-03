@@ -10,12 +10,14 @@ import Edit from './pages/Edit/Edit'
 
 
 
+
 const App = () => {
   return (
 
     <BrowserRouter>
       <Routes>
         <Route element={<Landing/>} path='/'/>
+       
         <Route element={<Signup />} path='/SignupPage' />
         <Route element={<Signin />} path='/Signinpage' />
         <Route element={<Home />} path='/Homepage' />

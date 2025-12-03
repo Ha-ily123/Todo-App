@@ -61,12 +61,12 @@ const Edit = () => {
     return (
         <div className={style.e1}>
             <form className={style.e2}>
-                <label >UserName</label>
+                <label >TaskName</label>
                 <input className={style.e3} type='text'
                     name="taskName"
                     value={editTask.taskName}
                     onChange={changeTask} />
-                    <label>PassWord</label>
+                    <label>DeadLine</label>
                 <input className={style.e4} type='date'
                     name="taskDeadline"
                     value={editTask.taskDeadline}

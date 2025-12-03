@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const ViewTask = () => {
   const [browser, setBrowser] = useState([])
+  // const [taskList,setTaskList]=useState()
 
   const navigate = useNavigate()
   async function printApi() {
@@ -36,22 +37,61 @@ const ViewTask = () => {
   function convertDate(d) {
 
     let rawDate = d.split("T")
-    console.log(rawDate[0]);
+    // console.log(rawDate[0]);
     let date = rawDate[0].split("-")
-    console.log(date);
+    // console.log(date);
 
     return `${date[2]}-${date[1]}-${date[0]}`
 
   }
+  function search(e) {
+    let a = browser.filter((s) => {
+      if (s.taskName.toLowerCase().includes(e.target.value.toLowerCase())) {
+        return true
+
+
+      }
+      else {
+        return false
+      }
+
+    })
+     setBrowser(a)
+  }
+ 
+  function searchDate(e) {
+    let b = browser.filter((s) => {
+      if (s.taskPriority.toLowerCase().includes(e.target.value.toLowerCase())) {
+        return true
+
+
+      }
+      else {
+        return false
+      }
+
+    })
+    setBrowser(b)
+  }
 
   return (
     <div>
+
       <div className={style.he}>
+
         <button className={style.r1} onClick={() => {
           navigate(-1)
         }}>back</button>
-        
+
         <Link to={'/'}><button className={style.r4}>Logout</button></Link>
+        <input  className={style.r7} type='text' placeholder='Search the task' onChange={search} />
+        <select  className={style.r8}name='taskPriority' onChange={searchDate}>
+          <option value='top'>top</option>
+          <option value='mid'>mid</option>
+          <option value='last'>last</option>
+
+        </select>
+
       </div>
 
       <div className={style.r5}>
